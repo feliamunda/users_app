@@ -1,0 +1,14 @@
+
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a routerLink="/" class="navbar-brand">
+      <img src="assets/img/logo_fa.svg" alt="feliamunda" width="30" class="d-inline-block align-text-top mr-2">
+      <span>Usuarios</span>
+    </a>
+      <ul class="navbar-nav justify-content-end">
+        <li class="nav-item">
+          <a routerLink="/" class="nav-link" *ngIf="auth.isLoggedIn()" (click)="auth.logout()"> Cerrar Sesión</a>
+        </li>
+      </ul>
+  </div>
+</nav>

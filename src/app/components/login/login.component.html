@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6 offset-3">
+      <form  [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="username-ctl" class="form-label">Username</label>
+          <input type="text" class="form-control" id="username-ctl" placeholder="Username" formControlName="username" required>
+          <div *ngIf="form.controls.username.invalid && (form.controls.username.dirty || form.controls.username.touched)" class="alert alert-danger error-alert">
+            {{error.getControlErrorMsg(form.controls.username)}}
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="password-ctl" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password-ctl" placeholder="Password" formControlName="password" required>
+          <div *ngIf="form.controls.password.invalid && (form.controls.password.dirty || form.controls.password.touched)" class="alert alert-danger">
+            {{error.getControlErrorMsg(form.controls.password)}}
+          </div>
+        </div>
+        <button  id="btnLogin" type="submit" class="btn btn-dark justify-self-center d-block mx-auto">Login</button>
+      </form>
+    </div>
+  </div>
+</div>

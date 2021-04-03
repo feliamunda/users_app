@@ -1,0 +1,34 @@
+.footer{
+    display: flex;
+    width: 100%;
+    height: 50px;
+    position:fixed;
+    bottom: 0;
+    color: #000;
+    align-items: flex-end;
+}
+.footer .footer-background{
+    position: absolute;
+    width: 100%;
+    inset: 0;
+    background-color: rgb(131, 136, 134);
+    opacity: .5;
+    z-index: -1;
+}
+.footer span{
+    opacity:1;
+}
+.footer span .author{
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.footer span a:hover{
+    text-decoration: none;
+    color: var(--altColor);
+}
+.footer span a{
+    font-style: italic;
+    font-size: .8em;
+    color: var(--mainColor);
+}
