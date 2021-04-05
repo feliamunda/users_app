@@ -1,0 +1,87 @@
+// @import '~@swimlane/ngx-datatable/index.css';
+// @import '~@swimlane/ngx-datatable/themes/material.scss';
+// @import '~@swimlane/ngx-datatable/assets/icons.css';
+$borderStyle: 1px solid rgba(0,0,0,.2);
+$mainColor : var(--mainColor);
+$altColor : var(--altColor);
+.ngx-datatable{
+    background: #fff;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 
+                0 8px 10px 1px rgba(0, 0, 0, 0.14), 
+                0 3px 14px 2px rgba(0, 0, 0, 0.12);
+    padding: 5px;
+    min-height: 50%;
+}
+.pagination .page-item .theme-color{
+    width: 2.5em;
+    color: $mainColor !important; 
+}
+.pagination .page-item.active .theme-color{
+    background-color: $altColor !important; 
+}
+.page-link.disabled{
+    opacity: .5;
+}
+.page-link.disabled:hover{
+    cursor:not-allowed;
+}
+.arrow-btn{
+    position: fixed;
+    bottom: 70px;
+    right: 0;
+    background: none;
+    border: none;
+    z-index: 1;
+    font-size: 2em;
+}
+
+::ng-deep {
+    .datatable-header{
+        border-bottom: $borderStyle;
+        font-weight: 600;
+    }
+    .datatable-body{
+        padding-left: 5px;
+        background-color: rgba(145, 141, 141, 0.1);
+    }
+    .datatable-row-group{
+        border-bottom: 1px dotted rgba($color: #000000, $alpha:.2);
+    }
+    .datatable-row-group:hover{
+        background-color: $altColor;
+        color: #ffffff;
+        font-weight: 400;
+        cursor: default;
+        
+    }
+    .datatable-footer{
+        border-top: $borderStyle;
+    }
+    .datatable-footer-inner{
+        justify-content: space-between;
+    }
+    .datatable-header-cell-label.draggable:marker{
+        cursor:grab
+    }
+    .datatable-header-cell-label.draggable::after{
+        font-size: .8em;
+        opacity: .5;
+        margin-left: 2px;
+        font-family:"Font Awesome 5 Free"; 
+        font-weight: 900; 
+        content: "\f337"
+    }
+    .markup-text{
+        font-weight: 600;
+    }
+    
+}
+@media (max-width: 576px) {
+    .ngx-datatable{
+        display: none;
+    }
+    .list-container{
+        max-height: 450px;
+        overflow-y: scroll; 
+    }    
+}

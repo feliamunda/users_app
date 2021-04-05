@@ -1,26 +1,54 @@
 <h1 class="mb-3">Lista de usuarios</h1>
+<section>
+  <ngx-datatable 
+    class="material" 
+    [rows]="tableRows" 
+    [columns]="tableColumns" 
+    [reorderable]="tableOpts.reorderable" 
+    [loadingIndicator]="tableOpts.loadingIndicator" 
+    [headerHeight]="50"
+    [footerHeight]="60"
+    [limit]="tableOpts.pageSize"
+    [rowHeight]="'auto'"
+    columnMode='flex'
+    [messages] = "tableOpts.messages"
+    
+    [count]="userList.length"
+    [offset]="tableOpts.pageNumber">
+    <ngx-datatable-footer>
+      <ng-template
+        ngx-datatable-footer-template
+        let-rowCount="rowCount"
+        let-pageSize="pageSize"
+        let-selectedCount="selectedCount"
+        let-curPage="curPage"
+        let-offset="offset"
+      >
+        <div>
+          <span class="d-block">Total: <span class="markup-text">{{ rowCount }}</span></span>
+          <span class= "d-block">Pagina <span class="markup-text">{{offset}}</span> de <span class="markup-text">{{ tableOpts.pages.length }}</span></span>
+        </div>
+        <nav aria-label="Page navigation">
+          <ul class="pagination m-auto">
+            <li class="page-item"><button class="page-link theme-color" (click)="goPage(1)"><i aria-hidden="true" class="fas fa-angle-double-left"></i></button></li>
+            <li class="page-item"><button class="page-link theme-color" aria-label="Previous"(click)="goPage(offset-1) " [ngClass] ="{ 'disabled': offset==1}" [disabled] = "offset==1" ><i aria-hidden="true" class="fas fa-angle-left"></i></button></li>
+            <li *ngFor="let page of tableOpts.pages;" [ngClass] ="{ 'active': offset==page} " class="page-item">
+              <button *ngIf="showNavButton(page)" class="page-link theme-color" (click)="goPage(page)">{{page}}</button>
+            </li>
+            <li class="page-item"><button class="page-link theme-color" aria-label="Next" (click)="goPage(offset+1)" [ngClass] ="{ 'disabled': offset==tableOpts.pages.length}" [disabled] = "offset==tableOpts.pages.length"><i aria-hidden="true" class="fas fa-angle-right"></i></button></li>
+            <li class="page-item"><button class="page-link theme-color" aria-label="Last" (click)="goPage(tableOpts.pages.length)"><i aria-hidden="true" class="fas fa-angle-double-right"></i></button></li>
+          </ul>
+        </nav>
+      </ng-template>
+    </ngx-datatable-footer>
+  </ngx-datatable>
 
-<table class="table table-dark table-hover text-center">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Usuario</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Apellido</th>
-        <th scope="col">Rol</th>
-        <th scope="col">Edad</th>
-        <th scope="col">Fecha de Registro</th>
-      </tr>
-    </thead>
-    <tbody >
-      <tr *ngFor="let user of userList; let i=index" >
-        <th scope="row">{{ i }}</th>
-        <td>{{ user.username }}</td>
-        <td>{{ user.name }}</td>
-        <td>{{ user.lastName }}</td>
-        <td>{{ user.role }}</td>
-        <td>{{ user.age }}</td>
-        <td>{{ user.createdAt | date : 'shortDate' }}</td>
-      </tr>
-    </tbody>
-</table>
+  <div class="d-list d-sm-none" *ngIf = "!tableOpts.loadingIndicator">
+    <span class="mb-4">Total de usuarios: {{userList.length}}</span> 
+    <div class="container-fluid list-container">
+      <ul  class="list-group mb-5">
+        <li *ngFor="let user of userList; let i= index" class="list-group-item " [ngClass]="{'list-group-item-secondary': i%2 == 0}">{{(i+1)+'- '+ user.name + ' ' + user.lastName | titlecase}}</li>
+      </ul>
+    </div>
+  </div>
+</section>

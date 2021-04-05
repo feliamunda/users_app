@@ -42,4 +42,12 @@ export class AuthenticationService {
   static getToken() {
     return localStorage.getItem('userapp-token')
   }
+
+  isValidResponse(r:any){
+    console.log(r);
+    
+    if( r.status == 403 ){
+      this.logout();
+    }
+  }
 }
