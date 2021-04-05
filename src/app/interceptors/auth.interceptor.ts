@@ -16,7 +16,7 @@ export class AuthInterceptor implements HttpInterceptor {
         'Content-Type' : 'application/json; charset=utf-8',
         'Accept'       : 'application/json',
         'Authorization': `Bearer ${AuthenticationService.getToken()}`,
-      },
+      }
     });   
     return next.handle(request);
   }

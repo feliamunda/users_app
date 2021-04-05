@@ -32,3 +32,8 @@
     font-size: .8em;
     color: var(--mainColor);
 }
+@media (max-width: 576px) {
+    .footer-background{
+        margin-top: 15px;
+    }
+}
