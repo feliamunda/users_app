@@ -1,6 +1,9 @@
 {
   "name": "users-app",
   "version": "0.0.0",
+  "description": "APP which consume feliamunda/users-api to show a list of users",
+  "author": "Felicie Amundaray",
+  "license": "GPL_3",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
