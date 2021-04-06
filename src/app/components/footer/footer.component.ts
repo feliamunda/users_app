@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-footer',
@@ -7,8 +6,6 @@ import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-
-  githubIcon = faGithubSquare
 
   constructor() { }
 

@@ -12,8 +12,7 @@ export class UserService {
   private url = `${environment.apiUrl}/api`; 
 
   constructor(
-    private http: HttpClient,
-    private auth : AuthenticationService
+    private http: HttpClient
   ) { }
   
   getUsers(){

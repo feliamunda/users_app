@@ -1,4 +1,7 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 import { UsersListComponent } from './users-list.component';
 
@@ -8,6 +11,7 @@ describe('UsersListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports:[ HttpClientModule, RouterTestingModule, NgxDatatableModule ],
       declarations: [ UsersListComponent ]
     })
     .compileComponents();

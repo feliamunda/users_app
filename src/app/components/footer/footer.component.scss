@@ -32,6 +32,9 @@
     font-size: .8em;
     color: var(--mainColor);
 }
+.footer span i{
+    font-size: 2.5em;
+}
 @media (max-width: 576px) {
     .footer-background{
         margin-top: 15px;

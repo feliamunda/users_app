@@ -3,18 +3,21 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('AppComponent', () => {
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        HttpClientModule
       ],
       declarations: [
         AppComponent,
         NavbarComponent,
         FooterComponent
-      ],
+      ]
     }).compileComponents();
   });
 

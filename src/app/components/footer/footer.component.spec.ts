@@ -5,7 +5,7 @@ import { FooterComponent } from './footer.component';
 describe('FooterComponent', () => {
   let component: FooterComponent;
   let fixture: ComponentFixture<FooterComponent>;
-
+  let footer: HTMLElement
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ FooterComponent ]
@@ -22,4 +22,10 @@ describe('FooterComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should be instanse ', () => {
+    expect(component).toBeTruthy();
+  });
+
+  
 });
