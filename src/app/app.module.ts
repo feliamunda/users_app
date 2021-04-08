@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -32,7 +31,6 @@ import { DateFormatPipe } from './pipes/date-format.pipe';
     HttpClientModule,
     ReactiveFormsModule,
     NgxDatatableModule,
-    FontAwesomeModule
     
   ],
   providers: [

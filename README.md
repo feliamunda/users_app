@@ -65,7 +65,7 @@ $ cd users_app
 # Instalar dependencias
 $ npm install
 
-# Correr Proyecto crea un servidor de desarrollo 
+# Correr Proyecto crea un servidor de desarrollo para pruebas
 # El servidor se inicializará en http://localhost:4200/
 $ ng serve
 
@@ -79,7 +79,7 @@ $ ng generate component component-name
 
 ### Construir el Proyecto 
 ```bash
-# Para generar el projecto
+# Para generar el projecto se genera el build en /dist/users-app
 $ ng build
 
 # Para generar el projecto para producción
